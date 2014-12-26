@@ -95,13 +95,13 @@
                     { field: "id", width: "70px", title: "ID" },
                     { field: "name", title: "Person Name" },
                     { field: "company", title: "Company Name" },
-                    { field: "email", title: "Email Address", width: "270px" }
+                    { field: "email", title: "Email Address", width: "270px"}
                 ]
             });
         });
     </script>
 
-     <div id="page-wrapper">
+   <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Dashboard <small>Dashboard Home</small></h1>
@@ -113,21 +113,21 @@
                 </div>
             </div>
 
-            <div class="row">
+          <!--  <div class="row">
                 <div class="col-lg-3">
                     <div class="panel panel-default ">
                         <div class="panel-body alert-info">
                             <div class="col-xs-5">
                                 <i class="fa fa-truck fa-5x"></i>
                             </div>
-                            <div class="col-xs-5 text-right">
+                           <div class="col-xs-5 text-right">
                                 <p class="alerts-heading">343</p>
                                 <p class="alerts-text">New Orders</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+           <div class="col-lg-3">
                     <div class="panel panel-default ">
                         <div class="panel-body alert-info">
                             <div class="col-xs-5">
@@ -166,12 +166,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8">
+            </div>-->
+         <div id="page-wrapper">
+           <div class="row" style="height: 333px">
+                <div class="col-lg-12">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">
+                        <div class="panel-heading"> 
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Sales personnel Data</h3>
                         </div>
                         <div class="panel-body">
@@ -179,7 +179,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+               </div>
+                <!-- <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Logins per week</h3>
@@ -188,10 +189,10 @@
                             <div id="shieldui-chart2"></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
-            <div class="row">
+           <!-- <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -202,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
 
 </asp:Content>

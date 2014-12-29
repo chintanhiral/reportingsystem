@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <script type="text/javascript">
         jQuery(function ($) {
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
@@ -74,7 +74,19 @@
                     }
                 ]
             });
-
+            function testAjax() {
+                var result = "";
+                $.ajax({
+                    url: '../main/FirstAjax',
+                    async: false,
+                    datatype: 'json',
+                    success: function (data) {
+                        result = data;
+                    }
+                });
+                return result;
+            }
+            var gridData = JSON.parse(testAjax());
             $("#shieldui-grid1").shieldGrid({
                 dataSource: {
                     data: gridData
@@ -92,28 +104,32 @@
                     toggle: false
                 },
                 columns: [
-                    { field: "id", width: "70px", title: "ID" },
-                    { field: "name", title: "Person Name" },
-                    { field: "company", title: "Company Name" },
-                    { field: "email", title: "Email Address", width: "270px"}
-                ]
-            });
+                    { field: "people_id", width: "70px", title: "ID" },
+                    { field: "report_id", width: "70px", title: "People Id" },
+                    { field: "president", width: "70px", title: "Report Id" },
+                    { field: "rcc", title: "rcc", width: "70px" },
+                    { field: "secretory", width: "70px", title: "Secretory" },
+                    { field: "club_name", width: "70px", title: "Club Name" },
+                    { field: "status", width: "70px", title: "Status" },
+                    { field: "modify", width: "70px", title: "Modify" }
+
+                ]});
         });
     </script>
 
-   <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Dashboard <small>Dashboard Home</small></h1>
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs. 
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Dashboard <small>Dashboard Home</small></h1>
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    Welcome to the admin dashboard! You can edit record or view the record. You can also download pdf file.
                         For the purpose of data visualization, additional widgets are used, so make sure you review all provided information.
-                    </div>
                 </div>
             </div>
+        </div>
 
-          <!--  <div class="row">
+        <!--  <div class="row">
                 <div class="col-lg-3">
                     <div class="panel panel-default ">
                         <div class="panel-body alert-info">
@@ -167,20 +183,20 @@
                     </div>
                 </div>
             </div>-->
-         <div id="page-wrapper">
-           <div class="row" style="height: 333px">
+        <div id="page-wrapper">
+            <div class="row" style="height: 333px">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
-                        <div class="panel-heading"> 
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Sales personnel Data</h3>
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>All Client Data</h3>
                         </div>
                         <div class="panel-body">
                             <div id="shieldui-grid1"></div>
                         </div>
                     </div>
                 </div>
-               </div>
-                <!-- <div class="col-lg-4">
+            </div>
+            <!-- <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Logins per week</h3>
@@ -190,9 +206,9 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+        </div>
 
-           <!-- <div class="row">
+        <!-- <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -204,7 +220,7 @@
                     </div>
                 </div>
             </div>-->
-        </div>
+    </div>
 
 </asp:Content>
 

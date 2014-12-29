@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NgoReportingSystem.Models;
 
 namespace NgoReportingSystem.Controllers
 {
@@ -14,6 +15,11 @@ namespace NgoReportingSystem.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult FirstAjax()
+        {
+            object abc =MainModel.SelectAll();
+            return Content(abc.ToString());
         }
 
         //
